@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <title>Торты на заказ</title>
+    <style>
+        body { font-family: sans-serif; }
+        .cake { margin-bottom: 30px; }
+        img { width: 300px; }
+    </style>
+</head>
+<body>
+    <h1>Все торты</h1>
+    {% for filename, desc in cakes %}
+    <div class="cake">
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}">
+        <p>{{ desc }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
